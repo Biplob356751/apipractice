@@ -5,16 +5,23 @@ import Data from '../../../Data/data.json';
 
 function Player() {
     const [players, setPlayers] = useState([]);
+    const [player, setPlayer] = useState([]);
     useEffect(() => {
         setPlayers(Data);
     }, []);
 
-    
+    const addPlayer = (name,salary) =>{
+       setPlayer([...player,name,salary])
+    }
     return (
         <div className='players'>
             <h1>My Team Players</h1>
+            <div>{
+                player.map(member => <p>{member}</p>)
+            }
+            </div>
             {
-                players.map(team => <Players play={team}></Players>)
+                players.map(team => <Players key={team.id} addPlayer={addPlayer} play={team}></Players>)
             }
         </div>
     )

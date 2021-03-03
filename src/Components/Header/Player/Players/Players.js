@@ -3,14 +3,14 @@ import './Players.css';
 
 function Players(props) {
     const {name, salary,image} = props.play;
-    const addPlayer = props.addplayer;
+    const addPlayer = props.addPlayer;
     return (
         <div className='team1'>
             <div className="team-member">
                 <img src={image} alt=""/>
                 <h2>{name}</h2>
                 <p>{salary}</p>
-                <button>Add Player</button>
+                <button onClick={()=> addPlayer(name,salary)}>Add Player</button>
             </div>
         </div>
     )
