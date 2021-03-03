@@ -16,6 +16,7 @@ function Player() {
     return (
         <div className='players'>
             <h1>My Team Players</h1>
+            <p>This My Dream Club.</p>
             <div>{
                 player.map(member => <p>{member}</p>)
             }
